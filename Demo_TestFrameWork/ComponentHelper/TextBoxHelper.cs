@@ -21,5 +21,13 @@ namespace Demo_TestFrameWork.ComponentHelper
             element = GenericHelper.GetElement(locator);
             element.Clear();
         }
+
+
+        public static void UploadFile(By locator,string inputText)
+        {
+            element = GenericHelper.GetElement(locator);
+            element.Clear();
+            element.SendKeys(inputText);
+        }
     }
 }

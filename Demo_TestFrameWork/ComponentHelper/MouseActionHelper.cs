@@ -23,7 +23,16 @@ namespace Demo_TestFrameWork.ComponentHelper
             act.ContextClick(ele).Build().Perform();
             Thread.Sleep(3000);
         }
-        
+
+        public static void MouseHover(By locator)
+        {
+            Actions act = new Actions(ObjectRepository.Driver);
+            ele = ObjectRepository.Driver.FindElement(locator);
+
+            act.MoveToElement(ele).Build().Perform();
+            Thread.Sleep(3000);
+           
+        }
         public static void DragNDrop(By startElement, By endElement)
         {
             Actions act = new Actions(ObjectRepository.Driver);
@@ -41,5 +50,6 @@ namespace Demo_TestFrameWork.ComponentHelper
             act.ClickAndHold(start).MoveToElement(target).Release().Build().Perform();
             Thread.Sleep(3000);
         }
+       
     }
 }

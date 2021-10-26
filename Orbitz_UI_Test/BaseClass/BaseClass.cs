@@ -61,15 +61,16 @@ namespace Orbitz_UI_Test.BaseClass
             report = new ExtentReports(ObjectRepository.Config.GetReportStorage() +
                                         DateTime.Now.ToString("yyyyMMdd_hhmmss") + ".html");
 
-            test = report.StartTest("Initial Navigation to Home Page");
+            test = report.StartTest("Initial Navigation to Downing Landing Page");
             ObjectRepository.Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(ObjectRepository.Config.GetPageLoadTimeout());
             ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(ObjectRepository.Config.GetElementTimeout());
          
             NavigationHelper.NavigateToUrl(ObjectRepository.Config.GetWebSite());
             test.Log(LogStatus.Info, "Arrived in Home Page.");
-            report.AddTestRunnerOutput("Arrived in Home Page.");
+            report.AddTestRunnerOutput("Arrived in Downing Landing Page.");
             BrowserHelper.MaxBrowser();
             test.Log(LogStatus.Info, "Browser Maximized");
+           
         }
 
         [AssemblyCleanup]
